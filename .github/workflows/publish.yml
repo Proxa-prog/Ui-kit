@@ -10,13 +10,16 @@ jobs:
     steps:
       - name: checkout
         uses: actions/checkout@v3
+      - name: Install dependencies
+        uses: npm ci
+      - name: Test application
+        uses: npm run test
       - name: node
         uses: actions/setup-node@v3
         with:
           node-version: '16.x'
           registry-url: 'https://registry.npmjs.org'
       - name: publish
-        - run: npm ci
-        - run: npm publish
+        run: npm publish
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
