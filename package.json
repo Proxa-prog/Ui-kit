@@ -1,6 +1,6 @@
 {
   "name": "vite-ui-kit",
-  "version": "0.0.15",
+  "version": "0.0.16",
   "type": "module",
   "main": "./dist/vite-ui-kit.umd.cjs",
   "module": "./dist/vite-ui-kit.js",
@@ -30,9 +30,6 @@
       "require": "./dist/vite-ui-kit.umd.cjs"
     }
   },
-  "files": [
-    "dist"
-  ],
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
@@ -73,5 +70,8 @@
     "typescript": "^5.0.2",
     "vite": "^4.3.2",
     "vite-plugin-dts": "^2.3.0"
-  }
+  },
+  "files": [
+    "dist"
+  ]
 }
