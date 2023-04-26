@@ -1,6 +1,6 @@
 const Input = () => {
     return (
-        <input type='text' placeholder='placeholder3'/>
+        <input type='text' placeholder='placeholder4'/>
     );
 };
 
