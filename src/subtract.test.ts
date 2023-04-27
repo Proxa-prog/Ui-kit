@@ -1,3 +1,4 @@
+import { test, expect } from 'vitest';
 import subtract from './subtract';
 
 test('subtracts two numbers', () => {
