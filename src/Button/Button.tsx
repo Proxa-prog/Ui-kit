@@ -1,14 +1,25 @@
-import Vite from '/public/vite.svg';
-import {FC} from "react";
+import { FC } from "react";
+
+import style from './Button.module.scss';
 
 interface IButton {
-    children: JSX.Element;
+    children: JSX.Element | string;
+    onClick: () => void;
+    id: string;
 }
 const Button: FC<IButton> = (props) => {
-    const { children } = props;
+    const {
+        children,
+        onClick,
+        id,
+    } = props;
 
     return (
-        <button>
+        <button
+            id={id}
+            className={style.button}
+            onClick={onClick}
+        >
             {/*<img src={Vite} width={50} height={50}/>*/}
             {children}
         </button>

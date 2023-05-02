@@ -12,6 +12,7 @@ export default defineConfig({
     build: {
         lib: {
             entry: resolve(__dirname, 'src/index.ts'),
+            // entry: resolve(__dirname, 'src/index.ts'),
             name: 'vite-ui-kit',
             fileName: 'vite-ui-kit',
         },
@@ -23,5 +24,9 @@ export default defineConfig({
     test: {
         globals: true,
         environment: 'jsdom', // @testing-library/jest-dom добавить к тестовому файлу
+        setupFiles: './src/tests/setup.ts',
+        deps: {
+            inline: [/vite-test-utils/]
+        }
     },
 });
