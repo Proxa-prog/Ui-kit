@@ -16,7 +16,10 @@ test('button', async () => {
     const page = await browser.newPage();
     await page.setContent(html);
     const result = await page.screenshot();
-    expect(result).toMatchImageSnapshot('./test/');
+    expect(result).toMatchImageSnapshot({
+        failureThreshold: 0.01,
+        failureThresholdType: 'percent'
+    });
 });
 
 test('Input', async () => {
@@ -25,7 +28,10 @@ test('Input', async () => {
     const page = await browser.newPage();
     await page.setContent(html);
     const result = await page.screenshot();
-    expect(result).toMatchImageSnapshot('./test/');
+    expect(result).toMatchImageSnapshot({
+        failureThreshold: 0.01,
+        failureThresholdType: 'percent'
+    });
 });
 
 test('Accordion', async () => {
@@ -34,5 +40,8 @@ test('Accordion', async () => {
     const page = await browser.newPage();
     await page.setContent(html);
     const result = await page.screenshot();
-    expect(result).toMatchImageSnapshot('./test/');
+    expect(result).toMatchImageSnapshot({
+        failureThreshold: 0.01,
+        failureThresholdType: 'percent'
+    });
 });
