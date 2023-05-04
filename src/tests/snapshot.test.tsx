@@ -11,14 +11,14 @@ import { renderToStaticMarkup } from 'react-dom/server';
 expect.extend({toMatchImageSnapshot}); // Устраняет Invalid Chai property: toMatchImageSnapshot
 
 test('button', async () => {
-    const html = renderToStaticMarkup(<Button>Кнопищесж</Button>);
+    const html = renderToStaticMarkup(<Button>Кнопка</Button>);
     const browser = await puppeteer.launch();
     const page = await browser.newPage();
     await page.setContent(html);
     const result = await page.screenshot();
     expect(result).toMatchImageSnapshot({
-        failureThreshold: 50,
-        failureThresholdType: 'pixel'
+        failureThreshold: 0.00034,
+        failureThresholdType: 'percent'
     });
 });
 
@@ -29,8 +29,8 @@ test('Input', async () => {
     await page.setContent(html);
     const result = await page.screenshot();
     expect(result).toMatchImageSnapshot({
-        failureThreshold: 50,
-        failureThresholdType: 'pixel'
+        failureThreshold: 0.00034,
+        failureThresholdType: 'percent'
     });
 });
 
@@ -41,7 +41,7 @@ test('Accordion', async () => {
     await page.setContent(html);
     const result = await page.screenshot();
     expect(result).toMatchImageSnapshot({
-        failureThreshold: 50,
-        failureThresholdType: 'pixel'
+        failureThreshold: 0.00034,
+        failureThresholdType: 'percent'
     });
 });
