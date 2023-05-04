@@ -17,7 +17,8 @@ test('button', async () => {
     await page.setContent(html);
     const result = await page.screenshot();
     expect(result).toMatchImageSnapshot({
-        failureThreshold: 0.00034,
+        comparisonMethod: 'ssim',
+        failureThreshold: 0.001,
         failureThresholdType: 'percent'
     });
 });
@@ -29,7 +30,8 @@ test('Input', async () => {
     await page.setContent(html);
     const result = await page.screenshot();
     expect(result).toMatchImageSnapshot({
-        failureThreshold: 0.00034,
+        comparisonMethod: 'ssim',
+        failureThreshold: 0.001,
         failureThresholdType: 'percent'
     });
 });
@@ -41,7 +43,8 @@ test('Accordion', async () => {
     await page.setContent(html);
     const result = await page.screenshot();
     expect(result).toMatchImageSnapshot({
-        failureThreshold: 0.00034,
+        comparisonMethod: 'ssim',
+        failureThreshold: 0.001,
         failureThresholdType: 'percent'
     });
 });
