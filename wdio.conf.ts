@@ -55,11 +55,11 @@ export const config: Options.Testrunner = {
     // from the same test should run tests.
     //
     maxInstances: 10,
-    //
-    // If you have trouble getting all important capabilities together, check out the
-    // Sauce Labs platform configurator - a great tool to configure your capabilities:
-    // https://saucelabs.com/platform/platform-configurator
-    //
+
+
+
+
+    // Конфиг для запуска CI/CD в github actions
     capabilities: [{
         // capabilities for local browser web tests
         maxInstances: 5,
@@ -69,13 +69,8 @@ export const config: Options.Testrunner = {
             args: ["--headless", "user-agent=...","--disable-gpu","--window-size=1440,735"]
         }
     }],
-    //
-    // ===================
-    // Test Configurations
-    // ===================
-    // Define all options that are relevant for the WebdriverIO instance here
-    //
-    // Level of logging verbosity: trace | debug | info | warn | error | silent
+
+
     logLevel: 'info',
     //
     // Set specific log levels per logger
