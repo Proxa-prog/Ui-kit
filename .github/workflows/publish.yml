@@ -16,6 +16,8 @@ jobs:
         run: npm run test
       - name: Start server
         run: npm run dev &
+            sleep 10 &&
+            curl http://localhost:5173 &&
       - name: Start e2e test
         run: npm run e2e
       - name: node
