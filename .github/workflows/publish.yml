@@ -15,11 +15,11 @@ jobs:
       - name: Test application
         run: npm run test
       - name: Start server
-        run: npm run dev &
-      - name: Sleep for 10 seconds
-        run: Start-Sleep -s 10
-      - name: Start e2e test
-        run: npm run e2e
+        run: |
+              npm run dev &&
+              npm run e2e
+#      - name: Start e2e test
+#        run:
       - name: node
         uses: actions/setup-node@v3
         with:
