@@ -15,11 +15,9 @@ jobs:
       - name: Test application
         run: npm run test
       - name: Start server
-        run: |
-              npm run dev -- --host &&
-              npm run e2e
-#      - name: Start e2e test
-#        run: npm run e2e
+        run: npm run dev -- --host &
+      - name: Start e2e test
+        run: npm run e2e
       - name: node
         uses: actions/setup-node@v3
         with:
